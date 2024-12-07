@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Clone GitHub Repository') {
             steps {
-                // Pull the latest code from GitHub repository
-                git url: "${GITHUB_REPO}", branch: 'main'
+                // Pull the latest code from GitHub repository using credentials if necessary
+                git credentialsId: 'your-credential-id', url: "${GITHUB_REPO}", branch: 'main'
             }
         }
 
